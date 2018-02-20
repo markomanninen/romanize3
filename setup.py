@@ -6,9 +6,9 @@ import os
 
 #python setup.py sdist upload
 
-version = 'v0.1.1'
+version = 'v0.1.2'
 
-name = 'romanize'
+name = 'romanize3'
 
 def read(fname):
     try:
@@ -27,7 +27,7 @@ setup(
   install_requires = [],
   version = version,
   description = 'Romanize - Transliteration module to romanize greek, hebrew, arabic, coptic, and sanskrit letters to single roman letter equivalents and back',
-  long_description = read('README.md'),
+  long_description = read('README'),
   author = 'Marko Manninen',
   author_email = 'elonmedia@gmail.com',
 
