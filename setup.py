@@ -6,7 +6,7 @@ import os
 
 #python setup.py sdist upload
 
-version = 'v0.1.2'
+version = 'v0.1.3'
 
 name = 'romanize3'
 
