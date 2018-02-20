@@ -20,7 +20,7 @@ def read(fname):
 setup(
   name = name,
   packages = [name],
-  package_dir = {name: name},
+  package_dir = {name: "romanize"},
   package_data = {
     name: ['*.py']
   },
