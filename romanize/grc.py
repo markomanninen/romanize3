@@ -188,10 +188,23 @@ letters = ''.join([''.join(d['letter'])+\
           d['transliteration'].upper() for key, d in data.items()])
 regex2 = re.compile('[^%s ]+' % letters)
 
+regex3 = re.compile('[^%s%s ]+' % (''.join(accents.keys()), \
+         ''.join([''.join(d['letter'])+''.join(d['letter']).upper() for key, d in data.items()])))
+
+def filter(string):
+    """
+    Preprocess string to remove all other characters but greek ones
+
+    :param string:
+    :return:
+    """
+    # remove all unwanted characters
+    return regex3.sub('', string)
+
 def preprocess(string):
     """
     Preprocess string to transform all diacritics and remove other special characters than appropriate
-    
+
     :param string:
     :return:
     """

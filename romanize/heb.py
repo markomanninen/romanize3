@@ -91,11 +91,22 @@ r = romanizer(data, False)
 # collect hebrew and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
+regex2 = re.compile('[^%s ]+' % ''.join([''.join(d['letter']) for key, d in data.items()]))
+
+def filter(string):
+    """
+    Preprocess string to remove all other characters but hebrew ones
+
+    :param string:
+    :return:
+    """
+    # remove all unwanted characters
+    return regex2.sub('', string)
 
 def preprocess(string):
     """
     Preprocess string to transform all diacritics and remove other special characters than appropriate
-    
+
     :param string:
     :return:
     """
@@ -111,4 +122,3 @@ def convert(string, sanitize=False):
     :return:
     """
     return r.convert(string, (preprocess if sanitize else False))
-

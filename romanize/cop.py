@@ -14,10 +14,20 @@ data = OrderedDict()
 
 r = romanizer(data)
 
+def filter(string):
+    """
+    Preprocess string to remove all other characters but coptic ones
+
+    :param string:
+    :return:
+    """
+    # remove all unwanted characters
+    return string
+
 def preprocess(string):
     """
     Preprocess string to transform all diacritics and remove other special characters
-    
+
     :param string:
     :return:
     """

@@ -14,10 +14,20 @@ data = OrderedDict()
 
 r = romanizer(data)
 
+def filter(string):
+    """
+    Preprocess string to remove all other characters but arabic ones
+
+    :param string:
+    :return:
+    """
+    # remove all unwanted characters
+    return string
+
 def preprocess(string):
     """
     Preprocess string to transform all diacritics and remove other special characters
-    
+
     :param string:
     :return:
     """
@@ -27,7 +37,7 @@ def convert(string, sanitize=False):
     """
     Swap characters from script to transliterated version and vice versa.
     Optionally sanitize string by using preprocess function.
-    
+
     :param sanitize:
     :param string:
     :return:

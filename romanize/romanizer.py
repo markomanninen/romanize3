@@ -22,12 +22,15 @@ class romanizer(object):
         if len(self.substitutes):
             self.regex = re.compile('|'.join(self.substitutes.keys()))
 
+    def filter(self):
+        pass
+
     def preprocess(self):
         pass
 
     def convert(self, string, preprocess = None):
         """
-        Swap characters from a script to transliteration and vice versa. 
+        Swap characters from a script to transliteration and vice versa.
         Optionally sanitize string by using preprocess function.
 
         :param preprocess:
