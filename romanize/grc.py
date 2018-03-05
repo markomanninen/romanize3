@@ -65,16 +65,16 @@ data['gamma'] = dict(letter=[u'γ'], name=u'γαμμα', segment='consonant', su
 # delta:http://en.wiktionary.org/wiki/δέλτα
 data['delta'] = dict(letter=[u'δ'], name=u'δελτα', segment='consonant', subsegment='mute', transliteration=u'd', order=4)
 # epsilon:http://en.wiktionary.org/wiki/epsilon
-data['epsilon'] = dict(letter=[u'ε'], name=u'ε ψιλον', segment='vowel', subsegment='short', transliteration=u'e', order=5)
+data['epsilon'] = dict(letter=[u'ε', u'ϵ'], name=u'ε ψιλον', segment='vowel', subsegment='short', transliteration=u'e', order=5)
 # digamma/stigma/episemon/wau:http://en.wikipedia.org/wiki/Digamma
-data['digamma'] = dict(letter=[u'ϛ'], name=u'διγαμμα', segment='numeral', subsegment='', transliteration=u'w', order=6)
+data['digamma'] = dict(letter=[u'ϛ', u'ϝ'], name=u'διγαμμα', segment='numeral', subsegment='', transliteration=u'w', order=6)
 #data['stigma'] = dict(letter=[u'ϛ'], name=u'στιγμα', segment='numeral', transliteration=u'w')
 # zeta:http://en.wiktionary.org/wiki/ζῆτα
 data['zeta'] = dict(letter=[u'ζ'], name=u'ζητα', segment='consonant', subsegment='double', transliteration=u'z', order=7)
 # eta:http://en.wiktionary.org/wiki/ἦτα
 data['eta'] = dict(letter=[u'η'], name=u'ητα', segment='vowel', subsegment='long', transliteration=u'ê', order=8)
 # theta:http://en.wiktionary.org/wiki/θῆτα
-data['theta'] = dict(letter=[u'θ'], name=u'θητα', segment='consonant', subsegment='mute', transliteration=u'h', order=9)
+data['theta'] = dict(letter=[u'θ', u'ϑ'], name=u'θητα', segment='consonant', subsegment='mute', transliteration=u'h', order=9)
 
 # letters from ι to ϙ (10 to 90)
 # iota:http://en.wiktionary.org/wiki/ἰῶτα
@@ -150,29 +150,29 @@ r = romanizer(data)
 
 _accents_ = {}
 
-_accents_[u'Α'] = u"Ἀ Ἄ Ἂ Ἆ ᾏ ᾈ ᾌ ᾊ ᾎ Ά Ἁ Ἅ Ἃ Ἇ Ὰ ᾼ ᾉ ᾍ ᾋ Ἀ"
-_accents_[u'α'] = u"ἀ ά ἄ ᾶ ᾳ ὰ ά ἀ ἁ ἂ ἃ ἄ ἅ ἆ ἇ ᾀ ᾁ ᾂ ᾃ ᾄ ᾅ ᾆ ᾇ ᾲ ᾳ ᾴ ᾶ ᾷ"
+_accents_[u'Α'] = u"ᾏ Ἂ ᾈ Ἇ ᾊ Ἅ Ἀ Ἃ ᾉ Ὰ ᾋ Ἄ Ά Ἁ ᾼ ᾎ ᾌ ᾍ Ἆ Ᾰ Ᾱ Ά"
+_accents_[u'α'] = u"ἄ ἂ ᾀ ᾷ ἁ ὰ ᾴ ἀ ἇ ᾄ ἅ ά ᾂ ᾆ ἆ ᾳ ᾲ ᾅ ᾃ ᾶ ᾁ ᾇ ἃ ά ᾰ ᾱ"
 
-_accents_[u'Ε'] = u"Έ Ἑ Ἕ Ἓ Ὲ Ἐ Ἔ Ἒ"
-_accents_[u'ε'] = u"έ ἔ ἐ ὲ έ ἐ ἑ ἒ ἓ ἔ ἕ"
+_accents_[u'Ε'] = u"Έ Ἑ Ἕ Ἓ Ὲ Ἐ Ἔ Ἒ Έ"
+_accents_[u'ε'] = u"έ ἐ ὲ ἑ ἒ ἓ ἔ ἕ έ"
 
-_accents_[u'Η'] = u" ᾚ ᾞ Ἠ Ἤ Ἢ Ἦ Ή Ἡ Ἥ Ἣ Ἧ Ὴ ῌ ᾙ ᾝ ᾛ ᾟ ᾘ ᾜ"
-_accents_[u'η'] = u"ή ἡ ῆ ἤ ἦ ὴ ῃ ὴ ή ᾐ ᾑ ᾒ ᾓ ᾔ ᾕ ᾖ ᾗ ῂ ῃ ῄ ῆ ῇ ἠ ἡ ἢ ἣ ἤ ἥ ἦ ἧ"
+_accents_[u'Η'] = u"ᾚ ᾞ Ἠ Ἤ Ἢ Ἦ Ή Ἡ Ἥ Ἣ Ἧ Ὴ ῌ ᾙ ᾝ ᾛ ᾟ ᾘ ᾜ Ή"
+_accents_[u'η'] = u"ᾖ ῇ ῄ ᾑ ἠ ἧ ἦ ἤ ᾐ ῂ ῃ ἣ ὴ ή ῆ ᾕ ᾓ ἥ ἢ ᾔ ᾗ ἡ ᾒ ή"
 
-_accents_[u'Ι'] = u"Ί Ἱ Ἵ Ἳ Ἷ Ὶ Ἰ Ἴ Ἲ Ἶ Ἱ"
-_accents_[u'ι'] = u"ἱ ἰ ἴ ί ῖ ἷ î ì ἶ ὶ ί ῒ ΐ ῖ ῗ ἰ ἱ ἲ ἳ ἴ ἵ ἶ ἷ ϊ"
+_accents_[u'Ι'] = u"Ὶ Ἶ Ἵ Ί Ἰ Ἱ Ἲ Ἴ Ἳ Ἷ Ί Ῑ Ῐ"
+_accents_[u'ι'] = u"î ἴ ἰ ἵ ῒ ἲ ί ῗ ἱ ἳ ϊ ὶ ΐ ἷ ῖ ì ἶ ῐ ῑ ΐ ί"
 
-_accents_[u'Ο'] = u"Ό Ὁ Ὅ Ὃ Ὸ Ὀ Ὄ Ὂ"
-_accents_[u'ο'] = u"ὁ ò ó ὄ ὅ ὸ ό ὀ ὁ ὂ ὃ ὄ ὅ" # ô is excluded from this list!
+_accents_[u'Ο'] = u"Ό Ὁ Ὅ Ὃ Ὸ Ὀ Ὄ Ὂ Ό"
+_accents_[u'ο'] = u"ὁ ὂ ὀ ó ò ὅ ὄ ὃ ό ὸ"
 
 _accents_[u'Ρ'] = u"Ῥ"
 _accents_[u'ρ'] = u"ῥ ῤ"
 
-_accents_[u'ϒ'] = u"Ύ Ὑ Ὕ Ὓ Ὗ Ὺ Ῡ"
-_accents_[u'υ'] = u"ῦ ύ ϋ ὐ ὕ ὖ ù ὑ ὺ ύ ὐ ὑ ὒ ὓ ὔ ὕ ὖ ὗ ῠ ῡ ῢ ΰ ῦ ῧ"
+_accents_[u'ϒ'] = u"Ύ Ὑ Ὕ Ὓ Ὗ Ὺ Ῡ Ύ Ῠ"
+_accents_[u'υ'] = u"ῡ ΰ ῠ ῢ ὑ ὒ ὗ ὕ ύ ῦ ὐ ù ϋ ὺ ὓ ὖ ῧ ὔ ΰ ύ"
 
-_accents_[u'Ω'] = u"ᾪ ᾮ Ὠ Ὤ Ὢ Ὦ Ώ Ὡ Ὥ Ὣ Ὧ Ὼ ῼ ᾩ ᾭ ᾫ ᾯ ᾨ ᾬ"
-_accents_[u'ω'] = u"ὥ ῶ ὧ ώ ὠ ῳ ᾧ ὼ ώ ὠ ὡ ὢ ὣ ὤ ὥ ὦ ὧ ᾠ ᾡ ᾢ ᾣ ᾤ ᾥ ᾦ ᾧ ῲ ῳ ῴ ῶ ῷ"
+_accents_[u'Ω'] = u"ᾪ ᾮ Ὠ Ὤ Ὢ Ὦ Ώ Ὡ Ὥ Ὣ Ὧ Ὼ ῼ ᾩ ᾭ ᾫ ᾯ ᾨ ᾬ Ώ"
+_accents_[u'ω'] = u"ῳ ᾧ ὥ ῷ ᾡ ὤ ᾦ ᾥ ῴ ᾢ ᾣ ᾤ ὣ ώ ῶ ὡ ᾠ ὢ ὦ ῲ ὼ ὠ ὧ ώ"
 
 accents = {}
 
@@ -188,8 +188,7 @@ letters = ''.join([''.join(d['letter'])+\
           d['transliteration'].upper() for key, d in data.items()])
 regex2 = re.compile('[^%s ]+' % letters)
 
-regex3 = re.compile('[^%s%s ]+' % (''.join(accents.keys()), \
-         ''.join([''.join(d['letter'])+''.join(d['letter']).upper() for key, d in data.items()])))
+regex3 = re.compile('[^%s%s ]+' % (''.join(accents.keys()), "ΑαΒβΓγΔδΕεϵΖζΗηΘθϑΙιΚκΛλΜμΝνΞξΟοΠπΡρΣϹσϲςΤτΥυϒΦφΧχΨψΩωϚϜϛϝϞϘϟϙϠͲϡͳ"))
 
 def filter(string):
     """

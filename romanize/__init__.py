@@ -2,6 +2,6 @@
 # -*- coding: utf-8 -*-
 # file: __init__.py
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 from .main import *
