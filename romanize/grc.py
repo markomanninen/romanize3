@@ -197,8 +197,10 @@ def filter(string):
     :param string:
     :return:
     """
-    # remove all unwanted characters
-    return regex3.sub('', string)
+    # remove all unwanted characters by replacing them with empty space
+    # if removing all other characters then word divisioning might get lost and further
+    # processing text would get difficult if not impossible
+    return regex3.sub(' ', string)
 
 def preprocess(string):
     """

@@ -101,7 +101,7 @@ def filter(string):
     :return:
     """
     # remove all unwanted characters
-    return regex2.sub('', string)
+    return regex2.sub(' ', string)
 
 def preprocess(string):
     """
