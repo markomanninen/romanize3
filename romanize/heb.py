@@ -91,7 +91,7 @@ r = romanizer(data, False)
 # collect hebrew and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
-regex2 = re.compile('[^%s\s]+' % ''.join([''.join(d['letter']) for key, d in data.items()]))
+regex2 = re.compile('[^%s\s]' % ''.join([''.join(d['letter']) for key, d in data.items()]))
 
 def filter(string):
     """

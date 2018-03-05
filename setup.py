@@ -7,7 +7,7 @@ import os
 # python setup.py sdist upload
 # pip install --no-cache-dir --upgrade romanize3
 
-version = 'v0.1.8'
+version = 'v0.1.9'
 
 name = 'romanize3'
 
