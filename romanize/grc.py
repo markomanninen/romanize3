@@ -190,6 +190,16 @@ regex2 = re.compile('[^%s ]+' % letters)
 
 regex3 = re.compile('[^%s%s\s]' % (''.join(accents.keys()), "ΑαΒβΓγΔδΕεϵΖζΗηΘθϑΙιΚκΛλΜμΝνΞξΟοΠπΡρΣϹσϲςΤτΥυϒΦφΧχΨψΩωϚϜϛϝϞϘϟϙϠͲϡͳ"))
 
+def deaccent(string):
+    """
+    Remove diacritics (accents), keep base forms of Greek letters
+
+    :param string:
+    :return:
+    """
+    # convert diacritics to simpler forms
+    return regex1.sub(lambda x: accents[x.group()], string)
+
 def filter(string):
     """
     Preprocess string to remove all other characters but Greek ones and whitespace
