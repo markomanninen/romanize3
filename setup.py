@@ -4,7 +4,8 @@ except ImportError:
     from distutils.core import setup
 import os
 
-#python setup.py sdist upload
+# python setup.py sdist upload
+# pip install --no-cache-dir --upgrade romanize3
 
 version = 'v0.1.5'
 
