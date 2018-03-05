@@ -91,16 +91,18 @@ r = romanizer(data, False)
 # collect hebrew and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
-regex2 = re.compile('[^%s ]+' % ''.join([''.join(d['letter']) for key, d in data.items()]))
+regex2 = re.compile('[^%s\s]+' % ''.join([''.join(d['letter']) for key, d in data.items()]))
 
 def filter(string):
     """
-    Preprocess string to remove all other characters but hebrew ones
+    Preprocess string to remove all other characters but Hebrew ones and whitespace
 
     :param string:
     :return:
     """
-    # remove all unwanted characters
+    # remove all unwanted characters by replacing them with empty space
+    # if removing all other characters then word divisioning might get lost and further
+    # processing text would get difficult if not impossible
     return regex2.sub(' ', string)
 
 def preprocess(string):

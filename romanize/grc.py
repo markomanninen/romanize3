@@ -188,11 +188,11 @@ letters = ''.join([''.join(d['letter'])+\
           d['transliteration'].upper() for key, d in data.items()])
 regex2 = re.compile('[^%s ]+' % letters)
 
-regex3 = re.compile('[^%s%s ]+' % (''.join(accents.keys()), "ΑαΒβΓγΔδΕεϵΖζΗηΘθϑΙιΚκΛλΜμΝνΞξΟοΠπΡρΣϹσϲςΤτΥυϒΦφΧχΨψΩωϚϜϛϝϞϘϟϙϠͲϡͳ"))
+regex3 = re.compile('[^%s%s\s]+' % (''.join(accents.keys()), "ΑαΒβΓγΔδΕεϵΖζΗηΘθϑΙιΚκΛλΜμΝνΞξΟοΠπΡρΣϹσϲςΤτΥυϒΦφΧχΨψΩωϚϜϛϝϞϘϟϙϠͲϡͳ"))
 
 def filter(string):
     """
-    Preprocess string to remove all other characters but greek ones
+    Preprocess string to remove all other characters but Greek ones and whitespace
 
     :param string:
     :return:
