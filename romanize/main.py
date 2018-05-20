@@ -6,7 +6,7 @@
 ara, arabic
 cop, coptic
 eng, english
-grc, ancient greek
+grc, greek
 heb, hebrew
 san, sanskrit
 arm, aramaic
