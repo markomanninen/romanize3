@@ -72,14 +72,12 @@ data['ou'] = dict(letter=[u'ⲱ'], name=u'ⲱ', segment='vowel', subsegment='', 
 # final_tsade:http://en.wiktionary.org/wiki/Tsade
 data['nine'] = dict(letter=[u'ⳁ'], name=u'ⳁ', segment='numeral', subsegment='', transliteration=u'j', order=27)
 
-r = romanizer(data, False)
+r = romanizer(data, has_capitals)
 
 # collect coptic and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration']+''.join(d['letter']).upper()+d['transliteration'].upper() for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
 regex2 = re.compile('[^%s\s]' % ''.join([''.join(d['letter'])+''.join(d['letter']).upper() for key, d in data.items()]))
-
-r = romanizer(data)
 
 def filter(string):
     """

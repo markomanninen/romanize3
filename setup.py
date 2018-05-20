@@ -7,7 +7,7 @@ import os
 # python setup.py sdist upload
 # pip install --no-cache-dir --upgrade romanize3
 
-version = 'v0.1.13'
+version = 'v0.1.14'
 
 name = 'romanize3'
 
@@ -34,7 +34,7 @@ setup(
 
   url = 'https://github.com/markomanninen/%s' % name,
   download_url = 'https://github.com/markomanninen/%s/archive/%s.tar.gz' % (name, version),
-  keywords = ['python', 'text analysis', 'transliteration'],
+  keywords = ['python', 'text analysis', 'text processing', 'transliteration'],
   platforms = ['any'],
 
   classifiers = [

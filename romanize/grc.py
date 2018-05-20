@@ -143,8 +143,7 @@ data['theta_m'] = dict(letter=[u'ṭ'], name=u'θητα', segment='numeral', sub
 
 data['mu_m'] = dict(letter=[u'ṃ'], name=u'θητα', segment='numeral', subsegment='', transliteration=u'ṃ', order=37)
 
-
-r = romanizer(data)
+r = romanizer(data, has_capitals)
 
 # accents / diacritics for simplified greek letters
 

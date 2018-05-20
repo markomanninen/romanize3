@@ -40,7 +40,7 @@ data['å'] = dict(letter=[u'å'], name=u'å', segment='vowel',     subsegment=''
 data['ä'] = dict(letter=[u'ä'], name=u'ä', segment='vowel',     subsegment='', transliteration=u'ä', order=28)
 data['ö'] = dict(letter=[u'ö'], name=u'ö', segment='vowel',     subsegment='', transliteration=u'ö', order=29)
 
-r = romanizer(data)
+r = romanizer(data, has_capitals)
 
 # collect letters from data dictionary for preprocessing function
 letters = ''.join(data.keys())

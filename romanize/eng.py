@@ -37,7 +37,7 @@ data['x'] = dict(letter=[u'x'], name=u'x', segment='consonant', subsegment='mute
 data['y'] = dict(letter=[u'y'], name=u'y', segment='vowel',     subsegment='short', transliteration=u'y', order=25)
 data['z'] = dict(letter=[u'z'], name=u'z', segment='consonant', subsegment='mute', transliteration=u'z', order=26)
 
-r = romanizer(data)
+r = romanizer(data, has_capitals)
 
 # collect letters from data dictionary for preprocessing function
 letters = ''.join(data.keys())

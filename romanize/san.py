@@ -12,7 +12,7 @@ has_capitals = False
 
 data = OrderedDict()
 
-r = romanizer(data)
+r = romanizer(data, has_capitals)
 
 def filter(string):
     """

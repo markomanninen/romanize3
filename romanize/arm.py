@@ -16,19 +16,19 @@ data = OrderedDict()
 # alef:http://en.wiktionary.org/wiki/
 data['alap'] = dict(letter=[u'𐡀'], name=u'𐡀', segment='vowel', subsegment='', transliteration=u'a', order=1)
 # beth:http://en.wiktionary.org/wiki/
-data['beth'] = dict(letter=[u'𐡁‬'], name=u'𐡁‬', segment='consonant', subsegment='', transliteration=u'b', order=2)
+data['beth'] = dict(letter=[u'𐡁'], name=u'𐡁', segment='consonant', subsegment='', transliteration=u'b', order=2)
 # gimel:http://en.wiktionary.org/wiki/
 data['gamal'] = dict(letter=[u'𐡂'], name=u'𐡂', segment='consonant', subsegment='', transliteration=u'g', order=3)
 # daleth:http://en.wiktionary.org/wiki/
-data['dalath'] = dict(letter=[u'𐡃‬'], name=u'𐡃‬', segment='consonant', subsegment='', transliteration=u'd', order=4)
+data['dalath'] = dict(letter=[u'𐡃'], name=u'𐡃', segment='consonant', subsegment='', transliteration=u'd', order=4)
 # he:http://en.wiktionary.org/wiki/
 data['he'] = dict(letter=[u'𐡄'], name=u'𐡄', segment='vowel', subsegment='', transliteration=u'h', order=5)
 # vau:http://en.wikipedia.org/wiki/
-data['waw'] = dict(letter=[u'𐡅‬'], name=u'𐡅‬', segment='vowel', subsegment='', transliteration=u'w', order=6)
+data['waw'] = dict(letter=[u'𐡅'], name=u'𐡅', segment='vowel', subsegment='', transliteration=u'w', order=6)
 # zayin:http://en.wiktionary.org/wiki/
-data['zain'] = dict(letter=[u'𐡆‬'], name=u'𐡆‬', segment='consonant', subsegment='', transliteration=u'z', order=7)
+data['zain'] = dict(letter=[u'𐡆'], name=u'𐡆', segment='consonant', subsegment='', transliteration=u'z', order=7)
 # heth:http://en.wiktionary.org/wiki/
-data['heth'] = dict(letter=[u'𐡇‬'], name=u'𐡇‬', segment='consonant', subsegment='', transliteration=u'ḥ', order=8)
+data['heth'] = dict(letter=[u'𐡇'], name=u'𐡇', segment='consonant', subsegment='', transliteration=u'ḥ', order=8)
 # teth:http://en.wiktionary.org/wiki/
 data['teth'] = dict(letter=[u'𐡈'], name=u'𐡈', segment='consonant', subsegment='', transliteration=u'ṭ', order=9)
 
@@ -42,15 +42,15 @@ data['lamadh'] = dict(letter=[u'𐡋'], name=u'𐡋', segment='consonant', subse
 # mem:http://en.wiktionary.org/wiki/
 data['mem'] = dict(letter=[u'𐡌'], name=u'𐡌', segment='consonant', subsegment='', transliteration=u'm', order=13)
 # num:http://en.wiktionary.org/wiki/
-data['num'] = dict(letter=[u'𐡍‬'], name=u'𐡍‬', segment='consonant', subsegment='', transliteration=u'n', order=14)
+data['num'] = dict(letter=[u'𐡍'], name=u'𐡍', segment='consonant', subsegment='', transliteration=u'n', order=14)
 # samekh:http://en.wiktionary.org/wiki/
 data['semkath'] = dict(letter=[u'𐡎'], name=u'𐡎', segment='consonant', subsegment='', transliteration=u's', order=15)
 # ayin:http://en.wiktionary.org/wiki/
-data['e'] = dict(letter=[u'𐡏‬'], name=u'𐡏‬', segment='vowel', subsegment='', transliteration=u'o', order=16)
+data['e'] = dict(letter=[u'𐡏'], name=u'𐡏', segment='vowel', subsegment='', transliteration=u'o', order=16)
 # pe:http://en.wiktionary.org/wiki/
 data['pe'] = dict(letter=[u'𐡐'], name=u'𐡐', segment='consonant', subsegment='', transliteration=u'p', order=17)
 # tsade:http://en.wikipedia.org/wiki/
-data['sadhe'] = dict(letter=[u'𐡑‬'], name=u'𐡑‬', segment='consonant', subsegment='', transliteration=u'ṣ', order=18)
+data['sadhe'] = dict(letter=[u'𐡑'], name=u'𐡑', segment='consonant', subsegment='', transliteration=u'ṣ', order=18)
 
 # letters from 𐡒 to 𐡕
 # resh:http://en.wiktionary.org/wiki/
@@ -72,14 +72,12 @@ data['taw'] = dict(letter=[u'𐡕'], name=u'𐡕', segment='consonant', subsegme
 # final_tsade:http://en.wiktionary.org/wiki/
 #data['final_sadhe'] = dict(letter=[u'ⳁ'], name=u'ⳁ', segment='consonant', subsegment='', transliteration=u'Y', order=27)
 
-r = romanizer(data, False)
+r = romanizer(data, has_capitals)
 
 # collect aramaic and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
 regex2 = re.compile('[^%s\s]' % ''.join([''.join(d['letter']) for key, d in data.items()]))
-
-r = romanizer(data)
 
 def filter(string):
     """

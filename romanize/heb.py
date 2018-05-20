@@ -86,7 +86,7 @@ data['final_pe'] = dict(letter=[u'ף'], name=u'פה סופית', segment='conson
 # final_tsade:http://en.wiktionary.org/wiki/Tsade
 data['final_tsade'] = dict(letter=[u'ץ'], name=u'צדיק סופית', segment='consonant', subsegment='', transliteration=u'Y', order=27)
 
-r = romanizer(data, False)
+r = romanizer(data, has_capitals)
 
 # collect hebrew and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])

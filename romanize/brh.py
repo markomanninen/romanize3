@@ -73,14 +73,12 @@ data['ta'] = dict(letter=[u'𑀢'], name=u'𑀢', segment='consonant', subsegmen
 # final_tsade:http://en.wiktionary.org/wiki/
 #data['final_sadhe'] = dict(letter=[u'ⳁ'], name=u'ⳁ', segment='consonant', subsegment='', transliteration=u'Y', order=27)
 
-r = romanizer(data, False)
+r = romanizer(data, has_capitals)
 
 # collect brahmic and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
 regex2 = re.compile('[^%s\s]' % ''.join([''.join(d['letter']) for key, d in data.items()]))
-
-r = romanizer(data)
 
 def filter(string):
     """

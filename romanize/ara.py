@@ -75,14 +75,12 @@ data['za'] = dict(letter=[u'ظ'], name=u'ظ', segment='consonant', subsegment=''
 # https://en.wikipedia.org/wiki/%D8%BA
 data['ghayn'] = dict(letter=[u'غ'], name=u'غ', segment='consonant', subsegment='', transliteration=u'g', order=28)
 
-r = romanizer(data, False)
+r = romanizer(data, has_capitals)
 
 # collect arabic and transliteration letters from data dictionary for preprocessing function
 letters = ''.join([''.join(d['letter'])+d['transliteration'] for key, d in data.items()])
 regex = re.compile('[^%s ]+' % letters)
 regex2 = re.compile('[^%s\s]' % ''.join([''.join(d['letter']) for key, d in data.items()]))
-
-r = romanizer(data)
 
 def filter(string):
     """
