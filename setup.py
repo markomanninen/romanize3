@@ -7,7 +7,7 @@ import os
 # python setup.py sdist upload
 # pip install --no-cache-dir --upgrade romanize3
 
-version = 'v0.1.10'
+version = 'v0.1.11'
 
 name = 'romanize3'
 
@@ -27,7 +27,7 @@ setup(
   },
   install_requires = [],
   version = version,
-  description = 'Romanize - Transliteration module to romanize greek, hebrew, arabic, coptic, and sanskrit letters to single roman letter equivalents and back',
+  description = 'Romanize - Transliteration module to romanize greek, hebrew, arabic, coptic, syriaic, phoenician, finnish, and sanskrit letters to the single roman letter equivalents and back',
   long_description = read('README'),
   author = 'Marko Manninen',
   author_email = 'elonmedia@gmail.com',

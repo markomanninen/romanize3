@@ -8,6 +8,8 @@ from .romanizer import romanizer
 
 has_capitals = False
 
+# https://en.wikipedia.org/wiki/Katapayadi_system
+
 data = OrderedDict()
 
 r = romanizer(data)
